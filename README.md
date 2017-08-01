@@ -1,6 +1,13 @@
 # Ectotest
 
-**TODO: Add description**
+Playing around with connecting Mssql to Elixir-Ecto.
+
+* Using the following resources:
+  * [SQL Server in Elixir, Part 1: Connecting](http://tech.findmypast.com/sql-server-in-elixir-connection/)
+  * [SQL Server in Elixir, Part 2: Process Management](http://tech.findmypast.com/sql-server-in-elixir-gen-server/)
+  * [mssqlex](https://github.com/findmypast-oss/mssqlex/)
+  * [mssql_ecto](https://github.com/findmypast-oss/mssql_ecto)
+
 
 ## Installation
 
