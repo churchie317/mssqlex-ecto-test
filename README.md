@@ -7,6 +7,7 @@ Playing around with connecting Mssql to Elixir-Ecto.
   * [SQL Server in Elixir, Part 2: Process Management](http://tech.findmypast.com/sql-server-in-elixir-gen-server/)
   * [mssqlex](https://github.com/findmypast-oss/mssqlex/)
   * [mssql_ecto](https://github.com/findmypast-oss/mssql_ecto)
+  * [Calling A Database Stored Proc Via ODBC From Elixir](https://onor.io/2014/03/18/calling-an-odbc-stored-proc-from-elixir/)
 
 
 ## Installation
