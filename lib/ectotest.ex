@@ -1,11 +1,8 @@
 defmodule Ectotest do
+  use Application
 
   def start(_type, _args) do
-    import Supervisor.Spec, warn: false
-
-    children = [
-      supervisor(EctoTest.Repo, [])
-    ]
+    EctoTest.Supervisor.start_link(:ok)
   end
 
 end

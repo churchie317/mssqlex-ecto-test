@@ -3,13 +3,20 @@
 use Mix.Config
 
 config :ectotest, EctoTest.Repo,
-  adapter: MssqlEcto,
-  database: "sql_server_db",
-  username: "user",
-  password: "password",
-  hostname: System.get_env("server_name_environment_variable")
+  adapter: Mssqlex,
+  database: System.get_env("db_name"),
+  username: System.get_env("user_name"),
+  password: System.get_env("password"),
+  hostname: System.get_env("server_name")
 
-config :ectotest, ecto_repos: [EctoTest.Repo]
+config :ectotest, master_node: :"master@127.0.0.1"
+
+config :ectotest, slave_nodes: [
+  ## Put slave node names here:
+]
+
+# Put more repos here
+config :ectotest, ecto_repos: [ EctoTest.Repo ]
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this

@@ -1,3 +1,4 @@
+## TODO: update this as the application evolves
 defmodule Ectotest.Application do
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
