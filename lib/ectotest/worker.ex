@@ -5,17 +5,17 @@ defmodule EctoTest.Worker do
   def start(query) do
     IO.puts "Running on #node-#{ node }"
 
-    ## { :ok, pid } = Mssqlex.start_link(Application.get_env(:ecto_test, EctoTest.Repo))
+    { :ok, pid } = Mssqlex.start_link(Application.get_env(:ecto_test, EctoTest.Repo))
 
     { timestamp, response } = Duration.measure(fn ->
-      ## Mssqlex.query(pid, query, [], [{ :timeout, :infinity }])
-      { :ok, "query", [ num_rows: 10000 ]}
+      Mssqlex.query(pid, query, [], [{ :timeout, :infinity }])
     end)
 
     handle_response({ Duration.to_milliseconds(timestamp), response })
   end
 
-  defp handle_response({ milliseconds, { :ok, _query, [ num_rows: num_rows ] } }) do
+  defp handle_response({ milliseconds, { :ok, _query, results } }) do
+    num_rows = Keyword.get(results, :num_rows)
     Logger.info "Worker [#{ node }-#{ inspect self }] successfully read #{ num_rows } row in #{ milliseconds } milliseconds"
   end
 
