@@ -13,7 +13,7 @@ Playing around with connecting Mssql to Elixir-Ecto.
 
 ### Simple
 
-Once the repository has been cloned down into your repository, run `mix deps.get` to pull in the package dependencies. You'll probably need to update the configuration to accommodate your environment variables in `config/config.exs`. Once downloaded, run `mix escript.build` to compile the scripts into an executable. Run the program with 
+Once the repository has been cloned down into your local environment, run `mix deps.get` to pull in the package dependencies. You'll likely need to update the configuration file to accommodate your environment's env variable names. This can be done in `config/config.exs`. Once downloaded, run `mix escript.build` to compile the scripts into an executable. Run the program with 
 ```bash
 ./ectotest -n [num_queries] [query]
 ```
@@ -21,7 +21,7 @@ where num_queries is the number of concurrent queries you wish to run and query 
 
 ### Distributed
 
-The only difference in execution between the distributed and simple programs are the distributed program requires a registry of slave nodes. Pass your named slave nodes into the `slave_nodes` configuration property in `config/config.exs`. Once those have been added to the configuration file, the distributed program can be run using the same invocation as its simple counterpart.
+Invocation is the same across distributed and localized execution. The only difference in invocation between the two is the distributed program requires a registry of slave nodes defined in the project's `config/config.exs`. Pass your named slave nodes into the `slave_nodes` configuration property in `config/config.exs`. 
 
 ## Installation
 

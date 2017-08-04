@@ -53,6 +53,7 @@ defmodule EctoTest.CLI do
       # Yo dawg, can you some of those tasks https://hexdocs.pm/elixir/Task.html#module-distributed-tasks
       1..queries_per_node
       |> Enum.map(fn _ ->
+        # Spawn an asynchronous task performed by a worker pid, supervised by the named TasksSupervisor module
         Task.Supervisor.async({ EctoTest.TasksSupervisor, node }, EctoTest.Worker, :start, [ query ]) end)
       end)
       |> Enum.map(&Task.await(&1, :infinity))
